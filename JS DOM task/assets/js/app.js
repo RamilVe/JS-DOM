@@ -31,7 +31,6 @@ desc(nums)
 
 
 let btn = document.getElementById('btn');
-
 btn.onclick = function(){
     let username = document.getElementById('username').value
     let password = document.getElementById('password').value
@@ -39,36 +38,27 @@ btn.onclick = function(){
 
     let first_letter = username.charAt(0)
 
-    for (const letter of username) {
-        if (letter == first_letter.toUpperCase()) {
-            alert('Success')
-        }
+    if (/[A-Z]/.test(first_letter) && /^[A-Za-z][A-Za-z0-9_]{6,}$/.test(username)) {
+        alert('Success')
+    }
+    else{
+        alert("You have entered an invalid username!")
     }
 
+    if(/^[A-Za-z]\w{6,10}$/.test(password)){
+        alert("success")
+    }
+    else{
+        alert("You have entered an invalid password!")
+    }
 
-    
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+    {
+        alert("Success")
+        return (true)
+    }
+    else{
+        alert("You have entered an invalid email address!")
+        return (false)
+    }    
 }
-
-// var character = 'aDdbgfbmyn';
-// var first_letter = character.charAt(0)
-// console.log(first_letter);
-
-// for (const letter of character) {
-//     if (letter == first_letter.toUpperCase()) {
-//         console.log(letter);
-//     }
-//     if (letter == first_letter.toLowerCase()){
-//      console.log(letter);
-//     }
-// }
-
-// var character = '5';
-// function isUpperCase(){
-//     if (character == character.toUpperCase()) {
-//         alert ('upper case true');
-//     }
-//     if (character == character.toLowerCase()){
-//         alert ('lower case true');
-//     }
-// }
-// isUpperCase(character)
